@@ -28,7 +28,7 @@ def process(pkt):
         if not domain in domainsCache:
             domainsCache[domain] = 'adult' if check('ad_cnt.txt', domain) else 'clean'
         if domainsCache[domain] == 'adult':
-            tb.send_message(773145741, socket.gethostbyaddr(pkt[IP].dst)[0] + '[' + pkt[IP].dst + ']' + ' - ' + now.strftime("%H:%M:%S") + '\n' + domain)
+            tb.send_message('CHAT ID HERE', socket.gethostbyaddr(pkt[IP].dst)[0] + '[' + pkt[IP].dst + ']' + ' - ' + now.strftime("%H:%M:%S") + '\n' + domain)
             # print(socket.gethostbyaddr(pkt[IP].dst)[0] + '[' + pkt[IP].dst + ']' + ' - ' + now.strftime("%H:%M:%S") + '\n' + domain)
             # print(domainsCache)
 
